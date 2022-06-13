@@ -1,0 +1,13 @@
+<form [formGroup]="products">
+    <mat-form-field appearance="outline">
+        <mat-label>Tool Type Number</mat-label>
+        <input matInput formControlName="tooltypenumber" placeholder="Tool Type Number" required>
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Tool Name</mat-label>
+        <input matInput formControlName="toolname" placeholder="Tool Name" required>
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperNext>Next</button>
+    </div>
+</form>

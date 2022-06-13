@@ -1,0 +1,10 @@
+<form [formGroup]="personal">
+    <mat-form-field appearance="outline">
+    <mat-label>Full Name</mat-label>
+        <input matInput formControlName="fullname" placeholder="Full Name" required>
+    </mat-form-field>
+    <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+    </div>
+</form>

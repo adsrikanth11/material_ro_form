@@ -1,131 +1,30 @@
 <div class="container">
-    <button type="button" class="btn btn-primary">Primary button</button>
-    <section>
-        <div class="example-label">Basic</div>
-        <div class="example-button-row">
-          <button mat-button>Basic</button>
-          <button mat-button color="primary">Primary</button>
-          <button mat-button color="accent">Accent</button>
-          <button mat-button color="warn">Warn</button>
-          <button mat-button disabled>Disabled</button>
-          <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Raised</div>
-        <div class="example-button-row">
-          <button mat-raised-button>Basic</button>
-          <button mat-raised-button color="primary">Primary</button>
-          <button mat-raised-button color="accent">Accent</button>
-          <button mat-raised-button color="warn">Warn</button>
-          <button mat-raised-button disabled>Disabled</button>
-          <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Stroked</div>
-        <div class="example-button-row">
-          <button mat-stroked-button>Basic</button>
-          <button mat-stroked-button color="primary">Primary</button>
-          <button mat-stroked-button color="accent">Accent</button>
-          <button mat-stroked-button color="warn">Warn</button>
-          <button mat-stroked-button disabled>Disabled</button>
-          <a mat-stroked-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Flat</div>
-        <div class="example-button-row">
-          <button mat-flat-button>Basic</button>
-          <button mat-flat-button color="primary">Primary</button>
-          <button mat-flat-button color="accent">Accent</button>
-          <button mat-flat-button color="warn">Warn</button>
-          <button mat-flat-button disabled>Disabled</button>
-          <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Icon</div>
-        <div class="example-button-row">
-          <div class="example-flex-container">
-            <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-              <mat-icon>home</mat-icon>
-            </button>
-            <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-              <mat-icon>menu</mat-icon>
-            </button>
-            <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-              <mat-icon>favorite</mat-icon>
-            </button>
-            <button mat-icon-button disabled aria-label="Example icon button with a open in new tab icon">
-              <mat-icon>open_in_new</mat-icon>
-            </button>
-          </div>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">FAB</div>
-        <div class="example-button-row">
-          <div class="example-flex-container">
-            <div class="example-button-container">
-              <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-                <mat-icon>delete</mat-icon>
-              </button>
+    <h1 class="text-center mat-display-3 my-5">ONLINE REPAIR ENQUIRY</h1>
+    <mat-stepper labelPosition="bottom" linear [orientation]="(stepperOrientation | async)!" #stepper>
+        <mat-step [stepControl]="products">
+            <ng-template matStepLabel>Your Product Details</ng-template>
+            <app-products></app-products>
+        </mat-step>
+        <mat-step [stepControl]="personal">
+            <ng-template matStepLabel>Your Personal Details</ng-template>
+            <app-personal></app-personal>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Confirm</ng-template>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Order</button>
             </div>
-            <div class="example-button-container">
-              <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
-                <mat-icon>bookmark</mat-icon>
-              </button>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
             </div>
-            <div class="example-button-container">
-              <button mat-fab color="warn" aria-label="Example icon button with a home icon">
-                <mat-icon>home</mat-icon>
-              </button>
-            </div>
-            <div class="example-button-container">
-              <button mat-fab disabled aria-label="Example icon button with a heart icon">
-                <mat-icon>favorite</mat-icon>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <mat-divider></mat-divider>
-      <section>
-        <div class="example-label">Mini FAB</div>
-        <div class="example-button-row">
-          <div class="example-flex-container">
-            <div class="example-button-container">
-              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-                <mat-icon>menu</mat-icon>
-              </button>
-            </div>
-            <div class="example-button-container">
-              <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
-                <mat-icon>plus_one</mat-icon>
-              </button>
-            </div>
-            <div class="example-button-container">
-              <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon">
-                <mat-icon>filter_list</mat-icon>
-              </button>
-            </div>
-            <div class="example-button-container">
-              <button mat-mini-fab disabled aria-label="Example icon button with a home icon">
-                <mat-icon>home</mat-icon>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+        </mat-step>
+    </mat-stepper>
 </div>
 
   
