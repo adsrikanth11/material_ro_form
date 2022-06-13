@@ -7,7 +7,7 @@ const MaterialComponents = [
   MatButtonModule,
   MatDividerModule,
   MatIconModule
-]
+];
 
 @NgModule({
   exports: [MaterialComponents],
